@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calendário - Copa do Mundo 2026</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>Calendário da Copa do Mundo 2026</h1>
+      <p>Veja os jogos do dia e acompanhe o calendário da competição.</p>
+    </header>
+
+    <main class="container">
+      <section class="secao-destaque">
+        <h2>Jogos de hoje</h2>
+        <div id="jogos-hoje" class="lista-jogos">
+          <!-- Os jogos de hoje serão inseridos pelo JavaScript -->
+        </div>
+      </section>
+
+      <section class="secao-filtros">
+        <h2>Filtrar jogos</h2>
+
+        <div class="filtros">
+          <div class="form-group">
+            <label for="filtro-selecao">Seleção</label>
+            <input type="text" id="filtro-selecao" placeholder="Ex: Brasil" />
+          </div>
+
+          <div class="form-group">
+            <label for="filtro-fase">Fase</label>
+            <select id="filtro-fase">
+              <option value="">Todas as fases</option>
+              <option value="Fase de grupos">Fase de grupos</option>
+              <option value="Oitavas de final">Oitavas de final</option>
+              <option value="Quartas de final">Quartas de final</option>
+              <option value="Semifinal">Semifinal</option>
+              <option value="Final">Final</option>
+            </select>
+          </div>
+
+          <div class="form-group botao-filtro">
+            <button id="limpar-filtros" type="button">Limpar filtros</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao-calendario">
+        <h2>Todos os jogos</h2>
+        <div id="todos-jogos" class="lista-jogos">
+          <!-- Todos os jogos serão inseridos pelo JavaScript -->
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

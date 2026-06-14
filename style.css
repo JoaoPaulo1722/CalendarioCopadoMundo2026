@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --verde-mexico: #3cac3b;
+  --azul-eua: #2a398d;
+  --vermelho-canada: #e61d25;
+  --cinza-claro: #d1d4d1;
+  --cinza-escuro: #474a4a;
+  --branco: #ffffff;
+
+  --fundo-principal: #f4f6f8;
+  --fundo-secao: #ffffff;
+  --fundo-card: #ffffff;
+
+  --texto-principal: #1f2933;
+  --texto-secundario: #474a4a;
+
+  --borda-suave: #d1d4d1;
+  --sombra-card: rgba(42, 57, 141, 0.12);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--fundo-principal);
+  color: var(--texto-principal);
+  min-height: 100vh;
+}
+
+/* Cabeçalho principal */
+.cabecalho {
+  text-align: center;
+  padding: 48px 20px;
+  background: linear-gradient(135deg, var(--azul-eua), #1c2b73);
+  color: var(--branco);
+  border-bottom: 6px solid var(--verde-mexico);
+}
+
+.cabecalho h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.cabecalho p {
+  color: var(--cinza-claro);
+  font-size: 1.05rem;
+}
+
+/* Container geral */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 32px auto;
+}
+
+/* Seções */
+section {
+  background-color: var(--fundo-secao);
+  padding: 26px;
+  border-radius: 16px;
+  margin-bottom: 26px;
+  border: 1px solid var(--borda-suave);
+  box-shadow: 0 10px 28px var(--sombra-card);
+}
+
+section h2 {
+  margin-bottom: 18px;
+  font-size: 1.45rem;
+  color: var(--azul-eua);
+}
+
+/* Seção de jogos de hoje */
+.secao-destaque {
+  border-left: 8px solid var(--vermelho-canada);
+  background: linear-gradient(135deg, var(--branco), #fff5f5);
+}
+
+.secao-destaque h2 {
+  color: var(--vermelho-canada);
+}
+
+/* Lista de jogos */
+.lista-jogos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* Filtros */
+.secao-filtros {
+  border-top: 5px solid var(--verde-mexico);
+}
+
+.filtros {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 220px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--cinza-escuro);
+}
+
+.form-group input,
+.form-group select {
+  padding: 13px;
+  border: 1px solid var(--borda-suave);
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  background-color: var(--branco);
+  color: var(--texto-principal);
+}
+
+.form-group input::placeholder {
+  color: #7b7f7f;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--verde-mexico);
+  outline: 3px solid rgba(60, 172, 59, 0.2);
+}
+
+/* Cards dos jogos */
+.card-jogo {
+  background-color: var(--fundo-card);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--borda-suave);
+  border-left: 7px solid var(--verde-mexico);
+  box-shadow: 0 8px 20px rgba(71, 74, 74, 0.12);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card-jogo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(42, 57, 141, 0.18);
+}
+
+.card-jogo h3 {
+  margin: 12px 0;
+  font-size: 1.25rem;
+  color: var(--azul-eua);
+}
+
+.card-jogo p {
+  margin-bottom: 8px;
+  color: var(--texto-secundario);
+  line-height: 1.4;
+}
+
+.card-jogo strong {
+  color: var(--texto-principal);
+}
+
+/* Selo da fase */
+.fase-jogo {
+  display: inline-block;
+  background-color: var(--verde-mexico);
+  color: var(--branco);
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Mensagem quando não houver jogos */
+.mensagem-vazia {
+  color: var(--cinza-escuro);
+  font-size: 1rem;
+  padding: 12px 0;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .lista-jogos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cabecalho {
+    padding: 36px 16px;
+  }
+
+  .cabecalho h1 {
+    font-size: 1.7rem;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  .card-jogo {
+    padding: 18px;
+  }
+}
+
+.botao-filtro {
+  justify-content: flex-end;
+}
+
+.botao-filtro button {
+  padding: 13px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--azul-eua);
+  color: var(--branco);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.botao-filtro button:hover {
+  background-color: var(--vermelho-canada);
+  transform: translateY(-2px);
+}
